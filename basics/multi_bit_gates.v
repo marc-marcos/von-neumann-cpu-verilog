@@ -1,6 +1,6 @@
 `include "basics/elementary_gates.v"
 
-module not16(in, out);
+module not16(out, in);
     input[15:0] in;
     output[15:0] out;
 
@@ -14,7 +14,7 @@ module not16(in, out);
 
 endmodule;
 
-module and16(a, b, out);
+module and16(out, a, b);
     input[15:0] a, b;
     output[15:0] out;
 
@@ -28,7 +28,7 @@ module and16(a, b, out);
 
 endmodule;
 
-module or16(a, b, out);
+module or16(out, a, b);
     input[15:0] a, b;
     output[15:0] out;
 

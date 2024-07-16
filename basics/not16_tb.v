@@ -4,7 +4,7 @@ module not16_tb();
     reg [15:0] in;
     wire [15:0] out;
 
-    not16 not16_1(in, out);
+    not16 not16_1(out, in);
 
     integer i;
 

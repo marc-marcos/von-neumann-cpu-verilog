@@ -4,7 +4,7 @@ module or16_tb();
     reg [15:0] a, b;
     wire [15:0] out;
 
-    and16 and16_1(a, b, out);
+    and16 and16_1(out, a, b);
 
     initial begin
         $dumpfile("not16.vcd");
