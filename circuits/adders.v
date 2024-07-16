@@ -1,5 +1,6 @@
 `include "basics/elementary_gates.v"
-
+`ifndef ADDERS_V
+`define ADDERS_V
 module half_adder(sum, carry, a, b);
     input a, b;
     output sum, carry;
@@ -45,3 +46,4 @@ module inc16(out, in);
 
     add16 a1(out, in, 16'b1);
 endmodule;
+`endif

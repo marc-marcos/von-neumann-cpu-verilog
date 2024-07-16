@@ -1,5 +1,7 @@
 `include "basics/elementary_gates.v"
 
+`ifndef MULTIPLEXERS_V
+`define MULTIPLEXERS_V
 module mux_gate(out, a, b, sel);
     input a, b, sel;
     output out;
@@ -94,3 +96,4 @@ module dmux8way(a, b, c, d, e, f, g, h, in, sel);
     dmux4way d3(e, f, g, h, out2, sel[1:0]);
 
 endmodule;
+`endif

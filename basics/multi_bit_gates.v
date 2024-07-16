@@ -1,5 +1,7 @@
 `include "basics/elementary_gates.v"
 
+`ifndef MULTI_BIT_GATES_V
+`define MULTI_BIT_GATES_V
 module not16(out, in);
     input[15:0] in;
     output[15:0] out;
@@ -58,3 +60,4 @@ module or8way(out, in);
 
     or_gate or7(out, orfirst, orsecond);
 endmodule;
+`endif

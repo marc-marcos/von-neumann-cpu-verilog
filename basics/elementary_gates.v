@@ -1,3 +1,5 @@
+`ifndef ELEMENTARY_GATES_V
+`define ELEMENTARY_GATES_V
 module not_gate(out, in);
     input in;
     output out;
@@ -41,3 +43,4 @@ module xor_gate(out, a, b);
 
     or_gate or1(out, aAndbNot, bAndaNot);
 endmodule
+`endif
