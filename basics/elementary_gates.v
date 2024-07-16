@@ -36,8 +36,8 @@ module xor_gate(out, a, b);
     not_gate not1(aNot, a);
     not_gate not2(bNot, b);
 
-    and_gate and1(out, bNot, aAndbNot);
-    and_gate and2(out, aNot, bAndaNot);
+    and_gate and1(aAndbNot, a, bNot);
+    and_gate and2(bAndaNot, aNot, b);
 
     or_gate or1(out, aAndbNot, bAndaNot);
 endmodule

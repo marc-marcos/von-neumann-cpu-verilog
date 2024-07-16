@@ -44,6 +44,20 @@ dmux4way: basics/dmux4way_tb.v
 dmux8way: basics/dmux8way_tb.v
 	iverilog -o basics/dmux8way basics/dmux8way_tb.v
 
+# adder circuits (project 2)
+
+half_adder: circuits/half_adder_tb.v
+	iverilog -o circuits/half_adder circuits/half_adder_tb.v
+
+full_adder: circuits/full_adder_tb.v
+	iverilog -o circuits/full_adder circuits/full_adder_tb.v
+
+add16: circuits/add16_tb.v
+	iverilog -o circuits/add16 circuits/add16_tb.v
+
+inc16: circuits/inc16_tb.v
+	iverilog -o circuits/inc16 circuits/inc16_tb.v
+
 clean:
-	rm -rf basics/and_gate basics/not_gate basics/or_gate basics/xor_gate basics/mux_gate basics/dmux_gate basics/not16 basics/and16 basics/mux16 basics/or8way basics/dmux8way basics/dmux4way basics/mux8way16
+	rm -f basics/and_gate basics/not_gate basics/or_gate basics/xor_gate basics/mux_gate basics/dmux_gate basics/not16 basics/and16 basics/mux16 basics/or8way basics/dmux8way basics/dmux4way basics/mux8way16 circuits/add16 circuits/full_adder circuits/half_adder
 	rm -rf *.vcd
