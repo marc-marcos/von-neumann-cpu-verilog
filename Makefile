@@ -58,6 +58,10 @@ add16: circuits/add16_tb.v
 inc16: circuits/inc16_tb.v
 	iverilog -o circuits/inc16 circuits/inc16_tb.v
 
+# alu
+alu: circuits/alu_tb.v
+	iverilog -o circuits/alu circuits/alu_tb.v
+
 clean:
-	rm -f basics/and_gate basics/not_gate basics/or_gate basics/xor_gate basics/mux_gate basics/dmux_gate basics/not16 basics/and16 basics/mux16 basics/or8way basics/dmux8way basics/dmux4way basics/mux8way16 circuits/add16 circuits/full_adder circuits/half_adder
+	rm -f basics/and_gate basics/not_gate basics/or_gate basics/xor_gate basics/mux_gate basics/dmux_gate basics/not16 basics/and16 basics/mux16 basics/or8way basics/dmux8way basics/dmux4way basics/mux8way16 circuits/add16 circuits/full_adder circuits/half_adder circuits/alu cricuits/inc16
 	rm -rf *.vcd
