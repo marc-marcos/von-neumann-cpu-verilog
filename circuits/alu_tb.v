@@ -12,14 +12,16 @@ module alu_tb();
         $dumpfile("alu.vcd");
         $dumpvars(0, alu_tb);
 
-        x = $random;
-        y = $random;
-        zx = 1'b1;
-        nx = 1'b0;
-        zy = 1'b1;
-        ny = 1'b0;
-        f = 1'b0;
-        no = 1'b1;
-        #10;
+        repeat(10) begin
+            x = $random;
+            y = $random;
+            zx = $random;
+            nx = $random;
+            zy = $random;
+            ny = $random;
+            f = $random;
+            no = $random;
+            #10;
+        end
     end
 endmodule;
