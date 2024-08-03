@@ -66,8 +66,23 @@ alu: circuits/alu_tb.v
 bit: memory/bit_tb.v
 	iverilog -o memory/bit memory/bit_tb.v
 
+register: memory/register_tb.v
+	iverilog -o memory/register memory/register_tb.v
+
+ram8: memory/ram8_tb.v
+	iverilog -o memory/ram8 memory/ram8_tb.v
+
+ram64: memory/ram64_tb.v
+	iverilog -o memory/ram64 memory/ram64_tb.v
+
+ram512: memory/ram512_tb.v
+	iverilog -o memory/ram512 memory/ram512_tb.v
+
+ram4k: memory/ram4k_tb.v
+	iverilog -o memory/ram4k memory/ram4k_tb.v
+
 clean:
 	rm -f basics/and_gate basics/not_gate basics/or_gate basics/xor_gate basics/mux_gate basics/dmux_gate basics/not16 basics/and16 basics/mux16 basics/or8way basics/dmux8way basics/dmux4way basics/mux8way16 
-	rm -f circuits/add16 circuits/full_adder circuits/half_adder circuits/alu cricuits/inc16 
-	rm -f memory/bit
+	rm -f circuits/add16 circuits/full_adder circuits/half_adder circuits/alu circuits/inc16 
+	rm -f memory/bit memory/register memory/ram8 memory/ram64 memory/ram512
 	rm -rf *.vcd
