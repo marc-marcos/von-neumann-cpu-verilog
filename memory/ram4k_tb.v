@@ -1,24 +1,26 @@
-`include "memory/ram512.v"
+`include "memory/ram4k_faster.v"
 
-module ram512_tb();
-    reg load, clk;
-    reg [8:0] address;
+module ram4k_tb();
+    reg load,clk; 
+    reg [11:0] address;
     reg [15:0] in;
     wire [15:0] out;
 
-    ram512 r1(out, in, address, load, clk);
-
     initial begin
         clk = 0;
-        forever #5 clk = ~clk;
+        forever begin
+            #5 clk = ~clk; 
+        end
     end
+
+    ram4k r1(out, in, address, load, clk);
 
     initial begin
         address = 'h00;
         load = 'b1;
         in = 'hABAB;
         #10;
-        address = 'h3F;
+        address = 'hFFF;
         load = 'b1;
         in = 'hCDCD;
         #10;
@@ -26,7 +28,7 @@ module ram512_tb();
         load = 'b0;
         in = 'h1111;
         #10;
-        address = 'h3F;
+        address = 'hFFF;
         load = 'b0;
         in = 'h1111;
         #10;
@@ -34,7 +36,9 @@ module ram512_tb();
     end
 
     initial begin
-        $dumpfile("ram512.vcd");
-        $dumpvars(0, ram512_tb);
+        $dumpfile("ram4k.vcd");
+        $dumpvars(0, ram4k_tb);
     end
+
+
 endmodule;
