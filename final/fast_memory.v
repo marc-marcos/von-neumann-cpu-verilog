@@ -11,8 +11,8 @@ module fast_memory (out, in, address, load, clk);
 
     `ifdef PROGRAM_FROM_FILE
         initial begin
-            $display("Loading rom from hex file.");
-            $readmemh("memory.mem", mem);
+            $display("Loading ROM from hex file.");
+            $readmemh("ram.mem", mem);
         end
     `endif
 
